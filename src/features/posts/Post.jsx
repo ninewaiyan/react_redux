@@ -30,6 +30,7 @@ const Post = () => {
         if(isEditing){
             dispatch(updatePost({id:updatePostId,title:post.title,body:post.body}))
             setPost({title:"",body:""})
+            setIsEditing(false)
         }
         else{
             
