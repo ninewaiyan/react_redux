@@ -20,7 +20,7 @@ const NavBar = () => {
             <i className="bx bx-search fs-4 lh-0"></i>
             <input
               type="text"
-              classNameName="form-control border-0 shadow-none"
+              className="form-control border-0 shadow-none"
               placeholder="Search..."
               aria-label="Search..."
             />

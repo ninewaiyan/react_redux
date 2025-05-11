@@ -101,11 +101,12 @@ const Layout = () => {
             <li className="menu-item active">
               <a href="index.html" className="menu-link">
                 
-                <Link to="/posts" className='menu-link'>
+                <Link to="/categories" className='menu-link'>
                 <i className="menu-icon tf-icons bx bx-home-circle"></i>
-                Posts</Link>
+                Categories</Link>
               </a>
             </li>
+
 
             <li className="menu-item active">
               <a href="index.html" className="menu-link">
