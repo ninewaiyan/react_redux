@@ -5,6 +5,7 @@ import Layout from './layout/Layout'
 import Home from './layout/Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CategoryList from './features/category/CategoryList'
+import CategoryForm from './features/category/CategoryForm'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route index element={<Home></Home>}></Route>
         <Route path="/posts" element={<Post></Post>}></Route>
         <Route path="/categories" element={<CategoryList></CategoryList>}></Route>
+        <Route path="/categories/create" element={<CategoryForm/>}></Route>
       </Route>
     </Routes>
     </BrowserRouter>

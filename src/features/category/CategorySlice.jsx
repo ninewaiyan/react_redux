@@ -21,6 +21,23 @@ export const fetchAllCategories = createAsyncThunk(
   }
 );
 
+export const deleteCategory = createAsyncThunk(
+  "categories/deleteCategory",
+  async(id)=>{
+    const response = await axios.delete(`http://localhost:8383/categories/${id}`)
+    return response.data
+  }
+
+)
+
+ export const addCategory = createAsyncThunk(
+  "categories/addCategory",
+  async ( category ) => {
+    const response = await axios.post("http://localhost:8383/categories/create", category);
+    return response.data;
+  }
+);
+
  const categorySlice = createSlice({
     name: "category",
     initialState,
@@ -38,6 +55,19 @@ export const fetchAllCategories = createAsyncThunk(
                 state.status = "failed";
                 state.error = action.error.message;
             })
+
+
+            .addCase(deleteCategory.fulfilled, (state, action) => {
+                state.status = "idle";
+                state.categories = state.categories.filter((item)=>item.id !=action.payload);
+            })
+
+             .addCase(addCategory.fulfilled, (state, action) => {
+                state.categories.push(action.payload)
+                state.status="idle"
+            })
+          
+            
            
     }
 });
